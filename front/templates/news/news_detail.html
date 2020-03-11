@@ -1,0 +1,60 @@
+{% extends "base/front_base.html" %}
+
+{% block title %}
+    新闻详情
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/news/news_detail.min.css' %}">
+{% endblock %}
+
+{% block main %}
+    <div class="main">
+        <div class="wrapper">
+            <div class="main-content-wrapper">
+                <div class="news-wrapper">
+                    <h1 class="title">
+                        薪人薪事常兴龙：疫期企业高效在线协同中层管理者是关键
+                    </h1>
+                    <div class="news-info">
+                        <div class="info-group">
+                            <span class="author">饭桌君</span>
+                            <span class="pub-time">3小时前</span>
+                            <span class="category">干货分享</span>
+                        </div>
+                        <div class="share-group">
+                            <span>分享至：</span>
+                            <a class="weixin share-item"></a>
+                            <a href="#" class="weibo share-item"></a>
+                        </div>
+                    </div>
+                    <article class="article">
+                        疫情肆虐，众多中小型企业业务受到巨大冲击，目前各地政府也已出台了一些帮扶政策，企业应当如何抓住利好政策制定自己的业务发展方案？面对即将到来的复工，企业又该如何应对？2月6日起，小饭桌推出“疫情之下远程办公和财税方案的应对之道”公益系列直播课，为创业者面临的各类问题答疑解惑。
+                    </article>
+                </div>
+
+                <div class="comment-wrapper">
+                    <h3 class="title">
+                        文章评论（0）
+                    </h3>
+                    <textarea name="comment" class="comment-textarea logined-textarea"
+                              placeholder="立即登录，参与评论"></textarea>
+                    <div class="submit-btn-group">
+                        <button class="submit-btn">立即评论</button>
+                    </div>
+                    <ul class="comment-list">
+                        <li>
+                            <div class="comment-info">
+                                <img src="https://img3.doubanio.com/icon/up121675317-1.jpg" alt="" class="avatar">
+                                <span class="author">leo</span>
+                                <span class="pub-time">昨天</span>
+                            </div>
+                            <p class="comment-content">第一条评论，沙发~~</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            {% include "common/sidebar.html" %}
+        </div>
+    </div>
+{% endblock %}

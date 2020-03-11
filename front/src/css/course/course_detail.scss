@@ -1,0 +1,168 @@
+@import "../common/constants";
+@import "../common/body";
+@import "../common/footer";
+@import "../common/init";
+@import "../common/header";
+@import "course_nav";
+
+.main{
+  .wrapper{
+    margin-top: 20px;
+    width: 1070px;
+    .course-wrapper{
+      background: white;
+      .course-info{
+        padding: 20px;
+        .course-title{
+          color: $mainFontColor;
+          font-size: 20px;
+        }
+        .price-group{
+          margin-top: 20px;
+          overflow: hidden;
+          .share-group{
+            float: left;
+            .title{
+              color: $assistFontColor;
+              font-size: 14px;
+            }
+          }
+          .buy-group{
+            float: right;
+            a{
+              text-decoration: none;
+              color: white;
+              background: #ff8d3f;
+              height: 40px;
+              width: 120px;
+              display: inline-block;
+              text-align: center;
+              line-height: 40px;
+              border-radius: 5px;
+              margin-left: 20px;
+            }
+            .price{
+              font-size: 16px;
+            }
+            .free{
+              color: $freeColor;
+            }
+            .pay{
+              color: $payColor;
+            }
+          }
+        }
+      }
+
+      .video-group{
+        width: 100%;
+        height: 600px;
+        background: #5c87d9;
+      }
+    }
+
+    .bottom-wrapper{
+      margin-top: 20px;
+      overflow: hidden;
+      .course-detail-wrapper{
+        float: left;
+        width: 700px;
+
+        .item-group{
+          background: #fff;
+          margin-bottom: 20px;
+          padding: 20px;
+          .item-title{
+            color: $mainFontColor;
+            font-size: 18px;
+            border-left: 5px solid $themeColor;
+            padding-left: 15px;
+          }
+
+          .teacher-group{
+            overflow: hidden;
+            margin-top: 20px;
+            .avatar-group{
+              float: left;
+              width: 60px;
+              height: 60px;
+              img{
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+
+              }
+            }
+            .teacher-info{
+                float: left;
+                margin-left: 10px;
+                color: $assistFontColor;
+              .teacher-desc{
+                margin-top: 15px;
+              }
+              }
+          }
+
+          .item-content{
+              margin-top: 20px;
+              padding-left: 20px;
+              color: rgb(68, 68, 68);
+              line-height: 1.8;
+              font-size: 15px;
+            }
+        }
+      }
+      .recommend-wrapper{
+        width: 355px;
+        float: right;
+        background: white;
+        padding: 20px;
+        box-sizing: border-box;
+        .recommend-title{
+          color: $mainFontColor;
+          font-size: 18px;
+        }
+        .course-list{
+          li{
+            list-style: none;
+            padding: 20px 0;
+            overflow: hidden;
+            a{
+              color: $mainFontColor;
+            }
+            .course-info-group{
+              float: left;
+              width: 150px;
+              height: 90px;
+              position: relative;
+              .course-title{
+                font-size: 16px;
+              }
+              .teacher{
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                color: $assistFontColor;
+                font-size: 14px;
+              }
+            }
+            .thumbnail-group{
+              float: left;
+              width: 160px;
+              height: 90px;
+              img{
+                width: 100%;
+                height: 100%;
+              }
+            }
+
+          }
+        }
+
+      }
+    }
+
+
+  }
+}

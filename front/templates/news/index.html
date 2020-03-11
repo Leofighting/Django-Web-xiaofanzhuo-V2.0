@@ -1,0 +1,89 @@
+{% extends 'base/front_base.html' %}
+{% load news_filters %}
+
+{% block title %}
+    首页
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/news/index.min.css' %}">
+    <script src=".{% static 'js/index.min.js' %}"></script>
+{% endblock %}
+
+{% block main %}
+    <div class="main">
+        <div class="wrapper">
+            <div class="main-content-wrapper">
+                <div class="banner-group" id="banner-group">
+                    <ul class="banner-ul" id="banner-ul">
+                        <li>
+                            <a href="">
+                                <img src="https://static-image.xfz.cn/1578029841_844.jpg" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="https://static-image.xfz.cn/1578029841_844.jpg" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="https://static-image.xfz.cn/1578029841_844.jpg" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="https://static-image.xfz.cn/1578029841_844.jpg" alt="">
+                            </a>
+                        </li>
+                    </ul>
+                    <span class="arrow left-arrow">‹</span>
+                    <span class="arrow right-arrow">›</span>
+                    <div class="page-control-group">
+                        <ul class="page-control">
+                        </ul>
+                    </div>
+                </div>
+                <div class="list-outer-group">
+                    <ul class="list-tab">
+                        <li class="active"><a href="#">最新资讯</a></li>
+                        {% for category in categories %}
+                            <li><a href="#">{{ category.name }}</a></li>
+                        {% endfor %}
+
+                    </ul>
+                    <ul class="list-inner-group">
+                        {% for news in newses %}
+                            <li>
+                            <div class="thumbnail-group">
+                                <a href="#">
+                                    <img src="{{ news.thumbnail }}" alt="">
+                                </a>
+                            </div>
+                            <div class="news-group">
+                                <p class="title">
+                                    <a href="#">{{ news.title }}</a>
+                                </p>
+                                <p class="desc">{{ news.desc }}</p>
+                                <p class="more">
+                                    <span class="category">{{ news.category.name }}</span>
+                                    <span class="pub-time">{{ news.pub_time|time_since }}</span>
+                                    <span class="author">{{ news.author.username }}</span>
+                                </p>
+                            </div>
+                        </li>
+                        {% endfor %}
+
+                    </ul>
+                    <div class="load-more-group">
+                        <button class="load-more">
+                            查看更多
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            {% include 'common/sidebar.html' %}
+        </div>
+    </div>
+{% endblock %}
