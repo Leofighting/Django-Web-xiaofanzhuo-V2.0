@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'apps.payinfo',
     'apps.xfzauth',
     'apps.ueditor',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -162,4 +163,5 @@ UEDITOR_CONFIG_PATH = os.path.join(BASE_DIR, "front/dist/ueditor/config.json")
 # UEDITOR_QINIU_BUCKET_NAME = QINIU_BUCKET_NAME
 # UEDITOR_QINIU_DOMAIN = QINIU_DOMAIN
 
-
+# 一次性加载文章数量
+ONE_PAGE_NEWS_COUNT = 2
