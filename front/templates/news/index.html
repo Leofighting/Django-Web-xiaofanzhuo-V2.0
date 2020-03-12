@@ -71,9 +71,9 @@
                 </div>
                 <div class="list-outer-group">
                     <ul class="list-tab">
-                        <li class="active"><a href="#">最新资讯</a></li>
+                        <li class="active" data-category="0"><a href="javascript:void (0)">最新资讯</a></li>
                         {% for category in categories %}
-                            <li><a href="#">{{ category.name }}</a></li>
+                            <li data-category="{{ category.pk }}"><a href="javascript:void (0)">{{ category.name }}</a></li>
                         {% endfor %}
 
                     </ul>

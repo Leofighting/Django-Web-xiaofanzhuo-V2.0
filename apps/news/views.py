@@ -22,9 +22,13 @@ def index(request):
 def news_list(request):
     """新闻列表"""
     page = int(request.GET.get("p", 1))
+    category_id = int(request.GET.get("category_id", 0))
     start = (page-1) * settings.ONE_PAGE_NEWS_COUNT
     end = start + settings.ONE_PAGE_NEWS_COUNT
-    newses = News.objects.order_by("-pub_time")[start: end]
+    if category_id == 0:
+        newses = News.objects.all()[start: end]
+    else:
+        newses = News.objects.filter(category__id=category_id)[start: end]
     serializer = NewsSerializer(newses, many=True)
     data = serializer.data
     return restful.result(data=data)

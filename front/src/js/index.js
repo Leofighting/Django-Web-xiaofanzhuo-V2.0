@@ -131,6 +131,8 @@ Banner.prototype.run = function () {
 function Index() {
     var self = this;
     self.page = 2;
+    self.category_id = 0;
+    self.loadBtn = $("#load-more-btn");
 
     template.defaults.imports.timeSince = function (dateValue) {
         var date = new Date(dateValue);
@@ -158,17 +160,16 @@ function Index() {
         }
 
     }
-
 }
 
 Index.prototype.listenLoadMoreEvent = function () {
     var self = this;
-    var loadBtn = $("#load-more-btn");
-    loadBtn.click(function () {
+    self.loadBtn.click(function () {
         xfzajax.get({
             "url": "/news/news_list/",
             "data": {
-                "p": self.page
+                "p": self.page,
+                "category_id": self.category_id
             },
             "success": function (result) {
                 if (result["code"] === 200) {
@@ -179,7 +180,7 @@ Index.prototype.listenLoadMoreEvent = function () {
                         ul.append(tpl);
                         self.page += 1;
                     } else {
-                        loadBtn.hide();
+                        self.loadBtn.hide();
                     }
                 }
             }
@@ -187,9 +188,42 @@ Index.prototype.listenLoadMoreEvent = function () {
     })
 };
 
+Index.prototype.listenCategorySwitchEvent = function(){
+    var self = this;
+    var tabGroup = $(".list-tab");
+    tabGroup.children().click(function () {
+        var li = $(this);
+        var category_id = li.attr("data-category");
+        var page = 1;
+        xfzajax.get({
+            "url": "/news/news_list/",
+            "data": {
+                "category_id": category_id,
+                "p": page
+            },
+            "success": function (result) {
+                if (result["code"] === 200){
+                    var newses = result["data"];
+                    var tpl = template("news-item", {"newses": newses});
+                    var newsListGroup = $(".list-inner-group");
+                    newsListGroup.empty();
+                    newsListGroup.append(tpl);
+                    self.page = 2;
+                    self.category_id = category_id;
+                    li.addClass("active").siblings().removeClass("active");
+                    self.loadBtn.show();
+                }
+
+            }
+        })
+
+    })
+};
+
 Index.prototype.run = function () {
     var self = this;
     self.listenLoadMoreEvent();
+    self.listenCategorySwitchEvent()
 };
 
 $(function () {
