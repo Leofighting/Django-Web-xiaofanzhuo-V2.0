@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.urls import path, include
 from django.conf.urls.static import static
+
+from xfz import settings
 from xfz.settings import MEDIA_URL, MEDIA_ROOT
 
 from apps.news import views
@@ -31,3 +33,10 @@ urlpatterns = [
 
 
 ] + static(MEDIA_URL, document_root=MEDIA_ROOT)
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns = [
+        path('__debug__/', include(debug_toolbar.urls)),
+
+    ] + urlpatterns

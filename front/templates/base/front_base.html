@@ -38,7 +38,7 @@
                 <div class="user-more-box" style="display: none">
                     <i class="triangle"></i>
                     {% if user.is_staff %}
-                         <a href="{% url 'cms:cms_index' %}">管理系统</a>
+                        <a href="{% url 'cms:cms_index' %}">管理系统</a>
                     {% endif %}
                     <a href="{% url 'xfzauth:logout' %}">退出登录</a>
                 </div>

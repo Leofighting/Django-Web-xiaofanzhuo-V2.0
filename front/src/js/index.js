@@ -188,7 +188,7 @@ Index.prototype.listenLoadMoreEvent = function () {
     })
 };
 
-Index.prototype.listenCategorySwitchEvent = function(){
+Index.prototype.listenCategorySwitchEvent = function () {
     var self = this;
     var tabGroup = $(".list-tab");
     tabGroup.children().click(function () {
@@ -202,7 +202,7 @@ Index.prototype.listenCategorySwitchEvent = function(){
                 "p": page
             },
             "success": function (result) {
-                if (result["code"] === 200){
+                if (result["code"] === 200) {
                     var newses = result["data"];
                     var tpl = template("news-item", {"newses": newses});
                     var newsListGroup = $(".list-inner-group");

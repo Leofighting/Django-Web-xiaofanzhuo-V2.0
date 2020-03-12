@@ -1,3 +1,4 @@
+from django.http import Http404
 from django.shortcuts import render
 
 from apps.news.models import News, NewsCategory
@@ -10,7 +11,7 @@ from utils import restful
 def index(request):
     """首页"""
     count = settings.ONE_PAGE_NEWS_COUNT
-    newses = News.objects.order_by("-pub_time")[0: count]
+    newses = News.objects.select_related("category", "author").all()[0: count]
     categories = NewsCategory.objects.all()
     context = {
         "newses": newses,
@@ -23,10 +24,10 @@ def news_list(request):
     """新闻列表"""
     page = int(request.GET.get("p", 1))
     category_id = int(request.GET.get("category_id", 0))
-    start = (page-1) * settings.ONE_PAGE_NEWS_COUNT
+    start = (page - 1) * settings.ONE_PAGE_NEWS_COUNT
     end = start + settings.ONE_PAGE_NEWS_COUNT
     if category_id == 0:
-        newses = News.objects.all()[start: end]
+        newses = News.objects.select_related("category", "author").all()[start: end]
     else:
         newses = News.objects.filter(category__id=category_id)[start: end]
     serializer = NewsSerializer(newses, many=True)
@@ -36,7 +37,14 @@ def news_list(request):
 
 def news_detail(request, news_id):
     """新闻详情页"""
-    return render(request, "news/news_detail.html")
+    try:
+        news = News.objects.select_related("author", "category").get(pk=news_id)
+        context = {
+            "news": news
+        }
+        return render(request, "news/news_detail.html", context=context)
+    except:
+        raise Http404
 
 
 def search(request):

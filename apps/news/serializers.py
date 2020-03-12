@@ -9,6 +9,7 @@ from apps.xfzauth.serializers import UserSerializer
 
 class NewsCategorySerializer(serializers.ModelSerializer):
     """新闻列表序列化"""
+
     class Meta:
         model = NewsCategory
         fields = ("id", "name")

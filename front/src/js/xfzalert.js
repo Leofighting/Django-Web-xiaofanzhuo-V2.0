@@ -9,23 +9,23 @@ var xfzalert = {
             - msg：提示的内容（可选）
     */
     'alertError': function (msg) {
-        swal('提示',msg,'error');
+        swal('提示', msg, 'error');
     },
     /*
         功能：信息提示
         参数：
             - msg：提示的内容（可选）
     */
-    'alertInfo':function (msg) {
-        swal('提示',msg,'warning');
+    'alertInfo': function (msg) {
+        swal('提示', msg, 'warning');
     },
     /*
         功能：可以自定义标题的信息提示
         参数：
             - msg：提示的内容（可选）
     */
-    'alertInfoWithTitle': function (title,msg) {
-        swal(title,msg);
+    'alertInfoWithTitle': function (title, msg) {
+        swal(title, msg);
     },
     /*
         功能：成功的提示
@@ -33,22 +33,22 @@ var xfzalert = {
             - msg：提示的内容（必须）
             - confirmCallback：确认按钮的执行事件（可选）
     */
-    'alertSuccess':function (msg,confirmCallback) {
+    'alertSuccess': function (msg, confirmCallback) {
         args = {
             'title': '提示',
             'text': msg,
             'type': 'success',
         }
-        swal(args,confirmCallback);
-    }, 
+        swal(args, confirmCallback);
+    },
     /*
         功能：带有标题的成功提示
         参数：
             - title：提示框的标题（必须）
             - msg：提示的内容（必须）
     */
-    'alertSuccessWithTitle':function (title,msg) {
-        swal(title,msg,'success');
+    'alertSuccessWithTitle': function (title, msg) {
+        swal(title, msg, 'success');
     },
     /*
         功能：确认提示
@@ -61,7 +61,7 @@ var xfzalert = {
             - confirmCallback：确认按钮点击回调（可选）
             - cancelCallback：取消按钮点击回调（可选）
     */
-    'alertConfirm':function (params) {
+    'alertConfirm': function (params) {
         swal({
             'title': params['title'] ? params['title'] : '提示',
             'showCancelButton': true,
@@ -70,13 +70,13 @@ var xfzalert = {
             'confirmButtonText': params['confirmText'] ? params['confirmText'] : '确定',
             'cancelButtonText': params['cancelText'] ? params['cancelText'] : '取消',
             'text': params['text'] ? params['text'] : ''
-        },function (isConfirm) {
-            if(isConfirm){
-                if(params['confirmCallback']){
+        }, function (isConfirm) {
+            if (isConfirm) {
+                if (params['confirmCallback']) {
                     params['confirmCallback']();
                 }
-            }else{
-                if(params['cancelCallback']){
+            } else {
+                if (params['cancelCallback']) {
                     params['cancelCallback']();
                 }
             }
@@ -96,7 +96,7 @@ var xfzalert = {
         swal({
             'title': params['title'] ? params['title'] : '请输入',
             'text': params['text'] ? params['text'] : '',
-            'type':'input',
+            'type': 'input',
             'showCancelButton': true,
             'animation': 'slide-from-top',
             'closeOnConfirm': false,
@@ -105,13 +105,13 @@ var xfzalert = {
             'inputValue': params['value'] ? params['value'] : null,
             'confirmButtonText': params['confirmText'] ? params['confirmText'] : '确定',
             'cancelButtonText': params['cancelText'] ? params['cancelText'] : '取消'
-        },function (inputValue) {
-            if(inputValue === false) return false;
-            if(inputValue === ''){
+        }, function (inputValue) {
+            if (inputValue === false) return false;
+            if (inputValue === '') {
                 swal.showInputError('输入框不能为空！');
                 return false;
             }
-            if(params['confirmCallback']){
+            if (params['confirmCallback']) {
                 params['confirmCallback'](inputValue);
             }
         });
@@ -120,7 +120,7 @@ var xfzalert = {
         功能：网络错误提示
         参数：无
     */
-    'alertNetworkError':function () {
+    'alertNetworkError': function () {
         this.alertErrorToast('网络错误');
     },
     /*
@@ -128,25 +128,27 @@ var xfzalert = {
         参数：
             - msg：提示消息
     */
-    'alertInfoToast':function (msg) {
-        this.alertToast(msg,'info');
+    'alertInfoToast': function (msg) {
+        this.alertToast(msg, 'info');
     },
     /*
         功能：错误toast提示（1s后消失）
         参数：
             - msg：提示消息
     */
-    'alertErrorToast':function (msg) {
-        this.alertToast(msg,'error');
+    'alertErrorToast': function (msg) {
+        this.alertToast(msg, 'error');
     },
     /*
         功能：成功toast提示（1s后消失）
         参数：
             - msg：提示消息
     */
-    'alertSuccessToast':function (msg) {
-        if(!msg){msg = '成功！';}
-        this.alertToast(msg,'success');
+    'alertSuccessToast': function (msg) {
+        if (!msg) {
+            msg = '成功！';
+        }
+        this.alertToast(msg, 'success');
     },
     /*
         功能：弹出toast（1s后消失）
@@ -154,7 +156,7 @@ var xfzalert = {
             - msg：提示消息
             - type：toast的类型
     */
-    'alertToast':function (msg,type) {
+    'alertToast': function (msg, type) {
         swal({
             'title': msg,
             'text': '',

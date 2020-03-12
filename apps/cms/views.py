@@ -20,6 +20,7 @@ def cms_index(request):
 
 class WriteNewsView(View):
     """编辑新闻"""
+
     def get(self, request):
         categories = NewsCategory.objects.all()
         context = {

@@ -13,16 +13,16 @@ function Message() {
 Message.prototype.initStyle = function () {
     var self = this;
     self.errorStyle = {
-        'wrapper':{
+        'wrapper': {
             'background': '#f2dede',
             'color': '#993d3d'
         },
-        'close':{
+        'close': {
             'color': '#993d3d'
         }
     };
     self.successStyle = {
-        'wrapper':{
+        'wrapper': {
             'background': '#dff0d8',
             'color': '#468847'
         },
@@ -52,7 +52,7 @@ Message.prototype.initElement = function () {
         'z-index': '10000',
         'left': '50%',
         'top': '-48px',
-        'margin-left':'-150px',
+        'margin-left': '-150px',
         'height': '48px',
         'box-sizing': 'border-box',
         'border': '1px solid #ddd',
@@ -78,43 +78,43 @@ Message.prototype.initElement = function () {
 Message.prototype.listenCloseEvent = function () {
     var self = this;
     self.closeBtn.click(function () {
-        self.wrapper.animate({"top":-self.wrapperHeight});
+        self.wrapper.animate({"top": -self.wrapperHeight});
     });
 };
 
 Message.prototype.showError = function (message) {
-    this.show(message,'error');
+    this.show(message, 'error');
 };
 
 Message.prototype.showSuccess = function (message) {
-    this.show(message,'success');
+    this.show(message, 'success');
 };
 
 Message.prototype.showInfo = function (message) {
-    this.show(message,'info');
+    this.show(message, 'info');
 };
 
-Message.prototype.show = function (message,type) {
+Message.prototype.show = function (message, type) {
     var self = this;
-    if(!self.isAppended){
+    if (!self.isAppended) {
         $(document.body).append(self.wrapper);
         self.isAppended = true;
     }
     self.messageSpan.text(message);
-    if(type === 'error') {
+    if (type === 'error') {
         self.wrapper.css(self.errorStyle['wrapper']);
         self.closeBtn.css(self.errorStyle['close']);
-    }else if(type === 'info'){
+    } else if (type === 'info') {
         self.wrapper.css(self.infoStyle['wrapper']);
         self.closeBtn.css(self.infoStyle['close']);
-    }else{
+    } else {
         self.wrapper.css(self.successStyle['wrapper']);
         self.closeBtn.css(self.successStyle['close']);
     }
-    self.wrapper.animate({"top":0},function () {
+    self.wrapper.animate({"top": 0}, function () {
         setTimeout(function () {
-            self.wrapper.animate({"top":-self.wrapperHeight});
-        },3000);
+            self.wrapper.animate({"top": -self.wrapperHeight});
+        }, 3000);
     });
 };
 

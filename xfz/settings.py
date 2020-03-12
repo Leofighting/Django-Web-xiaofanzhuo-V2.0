@@ -42,9 +42,11 @@ INSTALLED_APPS = [
     'apps.xfzauth',
     'apps.ueditor',
     'rest_framework',
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -165,3 +167,17 @@ UEDITOR_CONFIG_PATH = os.path.join(BASE_DIR, "front/dist/ueditor/config.json")
 
 # 一次性加载文章数量
 ONE_PAGE_NEWS_COUNT = 2
+
+#  Django Debug Toolbar 配置
+INTERNAL_IPS = [
+    '127.0.0.1',
+]
+
+DEBUG_TOOLBAR_PANELS = [
+    'debug_toolbar.panels.timer.TimerPanel',
+    'debug_toolbar.panels.sql.SQLPanel',
+]
+
+DEBUG_TOOLBAR_CONFIG = {
+    "JQUERY_URL": ""
+}

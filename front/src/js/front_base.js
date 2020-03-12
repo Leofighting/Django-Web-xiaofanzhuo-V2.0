@@ -169,7 +169,7 @@ Auth.prototype.listenSmsCaptchaEvent = function () {
 
 };
 
-Auth.prototype.listenSignupEvent = function(){
+Auth.prototype.listenSignupEvent = function () {
     var self = this;
     var submitBtn = self.signupGroup.find(".submit-btn");
     submitBtn.click(function (event) {
