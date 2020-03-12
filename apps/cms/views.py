@@ -114,3 +114,8 @@ def qntoken(request):
     q = qiniu.Auth(access_key, secret_key)
     token = q.upload_token(bucket)
     return restful.result(data={"token": token})
+
+
+def banner(request):
+    """轮播图"""
+    return render(request, "cms/banners.html")
