@@ -7,6 +7,20 @@
 
 {% block head %}
     <link rel="stylesheet" href="{% static 'css/news/news_detail.min.css' %}">
+    <script src="{% static 'arttemplate/template-web.js' %}"></script>
+    <script src="{% static 'js/news_detail.min.js' %}"></script>
+    <script id="comment-item" type="text/html">
+        {% verbatim %}
+        <li>
+            <div class="comment-info">
+                <img src="https://img3.doubanio.com/icon/up121675317-1.jpg" alt="" class="avatar">
+                <span class="author">{{ comment.author.username }}</span>
+                <span class="pub-time">{{ comment.pub_time|timeSince }}</span>
+            </div>
+            <p class="comment-content">{{ comment.content }}</p>
+        </li>
+        {% endverbatim %}
+    </script>
 {% endblock %}
 
 {% block main %}
@@ -41,17 +55,20 @@
                     <textarea name="comment" class="comment-textarea logined-textarea"
                               placeholder="立即登录，参与评论"></textarea>
                     <div class="submit-btn-group">
-                        <button class="submit-btn">立即评论</button>
+                        <button class="submit-btn" data-news-id="{{ news.pk }}">立即评论</button>
                     </div>
                     <ul class="comment-list">
-                        <li>
-                            <div class="comment-info">
-                                <img src="https://img3.doubanio.com/icon/up121675317-1.jpg" alt="" class="avatar">
-                                <span class="author">leo</span>
-                                <span class="pub-time">昨天</span>
-                            </div>
-                            <p class="comment-content">第一条评论，沙发~~</p>
-                        </li>
+                        {% for comment in news.comments.all %}
+                            <li>
+                                <div class="comment-info">
+                                    <img src="https://img3.doubanio.com/icon/up121675317-1.jpg" alt="" class="avatar">
+                                    <span class="author">{{ comment.author.username }}</span>
+                                    <span class="pub-time">{{ comment.pub_time|time_since }}</span>
+                                </div>
+                                <p class="comment-content">{{ comment.content }}</p>
+                            </li>
+                        {% endfor %}
+
                     </ul>
                 </div>
             </div>

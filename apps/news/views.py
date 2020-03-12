@@ -1,10 +1,12 @@
 from django.http import Http404
 from django.shortcuts import render
 
-from apps.news.models import News, NewsCategory
+from apps.news.forms import PublicComment
+from apps.news.models import News, NewsCategory, Comment
 from django.conf import settings
 
-from apps.news.serializers import NewsSerializer
+from apps.news.serializers import NewsSerializer, CommentSerializer
+from apps.xfzauth.decorators import xfz_login_required
 from utils import restful
 
 
@@ -38,15 +40,31 @@ def news_list(request):
 def news_detail(request, news_id):
     """新闻详情页"""
     try:
-        news = News.objects.select_related("author", "category").get(pk=news_id)
+        news = News.objects.select_related("author", "category").prefetch_related("comments__author").get(pk=news_id)
         context = {
             "news": news
         }
         return render(request, "news/news_detail.html", context=context)
-    except:
+    except News.DoesNotExist:
         raise Http404
 
 
 def search(request):
     """搜索页"""
     return render(request, "search/search.html")
+
+
+@xfz_login_required
+def public_comment(request):
+    """新闻评论"""
+    form = PublicComment(request.POST)
+    if form.is_valid():
+        news_id = form.cleaned_data.get("news_id")
+        content = form.cleaned_data.get("content")
+        news = News.objects.get(pk=news_id)
+        comment = Comment.objects.create(news=news, content=content, author=request.user)
+        serializer = CommentSerializer(comment)
+
+        return restful.result(data=serializer.data)
+    else:
+        return restful.params_error(message=form.get_errors())
