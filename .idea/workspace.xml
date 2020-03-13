@@ -3,14 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1cfbb381-21d5-4d16-af7b-be6b00a62295" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cms/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cms/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/cms/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cms/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/cms/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cms/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/news/templatetags/news_filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/news/templatetags/news_filters.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/dist/js/write_news.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/dist/js/write_news.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/js/write_news.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/js/write_news.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/course/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/course/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/templates/cms/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/templates/cms/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/templates/cms/write_news.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/templates/cms/write_news.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +19,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="Python Script" />
         <option value="JavaScript File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -105,7 +100,7 @@
       <workItem from="1583975820904" duration="146000" />
       <workItem from="1583976180396" duration="431000" />
       <workItem from="1583976751634" duration="22913000" />
-      <workItem from="1584062524999" duration="18641000" />
+      <workItem from="1584062524999" duration="20947000" />
     </task>
     <servers />
   </component>
@@ -113,22 +108,22 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="280" key="GridCell.Tab.0.bottom" timestamp="1584081260162">
+    <state width="1877" height="280" key="GridCell.Tab.0.bottom" timestamp="1584095270152">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584081260162" />
-    <state width="1877" height="280" key="GridCell.Tab.0.center" timestamp="1584081260162">
+    <state width="1877" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584095270152" />
+    <state width="1877" height="280" key="GridCell.Tab.0.center" timestamp="1584095270151">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584081260162" />
-    <state width="1877" height="280" key="GridCell.Tab.0.left" timestamp="1584081260162">
+    <state width="1877" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584095270151" />
+    <state width="1877" height="280" key="GridCell.Tab.0.left" timestamp="1584095270151">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584081260162" />
-    <state width="1877" height="280" key="GridCell.Tab.0.right" timestamp="1584081260162">
+    <state width="1877" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584095270151" />
+    <state width="1877" height="280" key="GridCell.Tab.0.right" timestamp="1584095270152">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584081260162" />
+    <state width="1877" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584095270152" />
     <state x="636" y="253" width="647" height="534" key="find.popup" timestamp="1584082239833">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
