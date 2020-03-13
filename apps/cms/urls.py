@@ -16,5 +16,9 @@ urlpatterns = [
     path("upload_file/", views.upload_file, name="upload_file"),
     path("qntoken/", views.qntoken, name="qntoken"),
     path("banner/", views.banner, name="banner"),
+    path("add_banner/", views.add_banner, name="add_banner"),
+    path("banner_list/", views.banner_list, name="banner_list"),
+    path("delete_banner/", views.delete_banner, name="delete_banner"),
+    path("edit_banner/", views.edit_banner, name="edit_banner"),
     path("write_news/", views.WriteNewsView.as_view(), name="write_news"),
 ]

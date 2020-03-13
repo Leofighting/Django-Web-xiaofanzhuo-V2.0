@@ -2,7 +2,7 @@ from django.http import Http404
 from django.shortcuts import render
 
 from apps.news.forms import PublicComment
-from apps.news.models import News, NewsCategory, Comment
+from apps.news.models import News, NewsCategory, Comment, Banner
 from django.conf import settings
 
 from apps.news.serializers import NewsSerializer, CommentSerializer
@@ -17,7 +17,8 @@ def index(request):
     categories = NewsCategory.objects.all()
     context = {
         "newses": newses,
-        "categories": categories
+        "categories": categories,
+        "banners": Banner.objects.all()
     }
     return render(request, 'news/index.html', context=context)
 

@@ -6,8 +6,9 @@ from django.contrib.admin.views.decorators import staff_member_required
 from django.views.decorators.http import require_POST, require_GET
 from django.views.generic.base import View
 
-from apps.cms.forms import EditNewsCategoryForm, WriteNewsForm
-from apps.news.models import NewsCategory, News
+from apps.cms.forms import EditNewsCategoryForm, WriteNewsForm, AddBannerForm, EditBannerForm
+from apps.news.models import NewsCategory, News, Banner
+from apps.news.serializers import BannerSerializer
 from utils import restful
 from xfz.settings import MEDIA_ROOT, MEDIA_URL, QINIU_ACCESS_KEY, QINIU_SECRET_KEY, QINIU_BUCKET_NAME
 
@@ -119,3 +120,44 @@ def qntoken(request):
 def banner(request):
     """轮播图"""
     return render(request, "cms/banners.html")
+
+
+def add_banner(request):
+    """添加轮播图"""
+    form = AddBannerForm(request.POST)
+    if form.is_valid():
+        priority = form.cleaned_data.get("priority")
+        image_url = form.cleaned_data.get("image_url")
+        link_to = form.cleaned_data.get("link_to")
+        banner = Banner.objects.create(priority=priority, image_url=image_url, link_to=link_to)
+        return restful.result(data={"banner_id": banner.pk})
+    else:
+        return restful.params_error(message=form.get_errors())
+
+
+def banner_list(request):
+    """轮播图列表"""
+    banners = Banner.objects.all()
+    serializer = BannerSerializer(banners, many=True)
+    return restful.result(data=serializer.data)
+
+
+def delete_banner(request):
+    """删除轮播图"""
+    banner_id = request.POST.get("banner_id")
+    Banner.objects.filter(pk=banner_id).delete()
+    return restful.ok()
+
+
+def edit_banner(request):
+    """编辑轮播图"""
+    form = EditBannerForm(request.POST)
+    if form.is_valid():
+        pk = form.cleaned_data.get("pk")
+        image_url = form.cleaned_data.get("image_url")
+        link_to = form.cleaned_data.get("link_to")
+        priority = form.cleaned_data.get("priority")
+        Banner.objects.filter(pk=pk).update(image_url=image_url, link_to=link_to, priority=priority)
+        return restful.ok()
+    else:
+        return restful.params_error(message=form.get_errors())

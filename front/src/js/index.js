@@ -33,7 +33,7 @@ Banner.prototype.initPageControl = function () {
 
 Banner.prototype.animate = function () {
     var self = this;
-    self.bannerUl.animate({"left": -798 * self.index}, 750);
+    self.bannerUl.stop().animate({"left": -798 * self.index}, 750);
     var index = self.index;
     if (index === 0) {
         index = self.bannerCount - 1;

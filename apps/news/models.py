@@ -29,3 +29,14 @@ class Comment(models.Model):
 
     class Meta:
         ordering = ["-pub_time"]
+
+
+class Banner(models.Model):
+    """轮播图"""
+    priority = models.IntegerField(default=0)
+    image_url = models.URLField()
+    link_to = models.URLField()
+    pub_time = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-priority"]
