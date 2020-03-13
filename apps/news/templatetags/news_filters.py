@@ -41,4 +41,4 @@ def time_format(value):
     if not isinstance(value, datetime):
         return value
 
-    return localtime(value).strftime("%Y/%m/%d %H:%M:%S")
+    return localtime(value).strftime("%Y/%m/%d %H:%M")

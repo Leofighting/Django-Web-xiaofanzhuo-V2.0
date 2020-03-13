@@ -39,3 +39,13 @@ class EditBannerForm(forms.ModelForm, FormMixin):
     class Meta:
         model = Banner
         fields = ("priority", "link_to", "image_url")
+
+
+class EditNewsForm(forms.ModelForm, FormMixin):
+    """修改新闻表单"""
+    category = forms.IntegerField()
+    pk = forms.IntegerField()
+
+    class Meta:
+        model = News
+        exclude = ("category", "author", "pub_time")

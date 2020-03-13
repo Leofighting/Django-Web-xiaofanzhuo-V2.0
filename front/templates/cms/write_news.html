@@ -1,7 +1,11 @@
 {% extends 'cms/base.html' %}
 
 {% block title %}
-    发布新闻
+    {% if news %}
+        编辑新闻
+    {% else %}
+        发布新闻
+    {% endif %}
 {% endblock %}
 {% block head %}
     <script src="https://unpkg.com/qiniu-js@2.4.0/dist/qiniu.min.js"></script>
@@ -12,7 +16,11 @@
 {% endblock %}
 
 {% block content-header %}
-    <h2>发布新闻</h2>
+    {% if news %}
+        <h2>编辑新闻</h2>
+    {% else %}
+        <h2>发布新闻</h2>
+    {% endif %}
 {% endblock %}
 
 {% block content %}
@@ -23,24 +31,43 @@
                     <div class="box-body">
                         <div class="form-group">
                             <label for="title-form">标题</label>
-                            <input type="text" class="form-control" name="title" id="title-form">
+                            {% if news %}
+                                <input type="text" class="form-control" name="title" id="title-form"
+                                       value="{{ news.title }}">
+                            {% else %}
+                                <input type="text" class="form-control" name="title" id="title-form">
+                            {% endif %}
                         </div>
                         <div class="form-group">
                             <label for="category-form">分类</label>
                             <select name="category" id="category-form" class="form-control">
                                 {% for category in categories %}
-                                    <option value="{{ category.pk }}">{{ category.name }}</option>
+                                    {% if news and news.category_id == category.pk %}
+                                        <option value="{{ category.pk }}" selected>{{ category.name }}</option>
+                                    {% else %}
+                                        <option value="{{ category.pk }}">{{ category.name }}</option>
+                                    {% endif %}
                                 {% endfor %}
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="desc-form">描述</label>
-                            <input type="text" class="form-control" name="desc" id="desc-form">
+                            {% if news %}
+                                <input type="text" class="form-control" name="desc" id="desc-form"
+                                       value="{{ news.desc }}">
+                            {% else %}
+                                <input type="text" class="form-control" name="desc" id="desc-form">
+                            {% endif %}
                         </div>
                         <div class="form-group">
                             <label for="thumbnail-form">缩略图</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" name="thumbnail" id="thumbnail-form" >
+                                {% if news %}
+                                    <input type="text" class="form-control" name="thumbnail" id="thumbnail-form"
+                                           value="{{ news.thumbnail }}">
+                                {% else %}
+                                    <input type="text" class="form-control" name="thumbnail" id="thumbnail-form">
+                                {% endif %}
                                 <span class="input-group-btn">
                                     <label for="" class="btn btn-default btn-file">
                                         上传图片<input hidden type="file" class="btn btn-default" id="thumbnail-btn">
@@ -58,11 +85,14 @@
                         </div>
                         <div class="form-group">
                             <label for="content-form">内容</label>
-                            <script id="editor" type="text/plain"></script>
+                            <script id="editor" type="text/plain">
+                                    {{ news.content|safe }}
+
+                            </script>
                         </div>
                     </div>
                     <div class="box-footer">
-                        <button class="btn btn-primary pull-right" id="submit-btn">发布新闻</button>
+                        <button class="btn btn-primary pull-right" id="submit-btn" data-news-id="{{ news.pk }}">发布新闻</button>
                     </div>
                 </form>
             </div>

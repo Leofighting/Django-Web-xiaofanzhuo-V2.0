@@ -6,14 +6,11 @@
       <change beforePath="$PROJECT_DIR$/apps/cms/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cms/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/cms/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cms/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/cms/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cms/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/news/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/news/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/news/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/news/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/news/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/news/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/dist/js/banner.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/dist/js/banner.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/js/banner.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/js/banner.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/src/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/news/templatetags/news_filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/news/templatetags/news_filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/dist/js/write_news.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/dist/js/write_news.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/js/write_news.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/js/write_news.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/templates/cms/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/templates/cms/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/templates/news/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/templates/news/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/templates/cms/write_news.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/templates/cms/write_news.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,20 +45,20 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/front/src/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/front/templates/cms" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\project\xfz2020\xfz\front\templates\cms" />
+      <recent name="E:\project\xfz2020\xfz\front\src\images" />
+      <recent name="E:\project\xfz2020\xfz\front\src\images\banner" />
+      <recent name="E:\project\xfz2020\xfz\front\dist" />
+      <recent name="E:\project\xfz2020\xfz\apps" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\project\xfz2020\xfz\front\templates\common" />
       <recent name="E:\project\xfz2020\xfz\front\templates" />
-      <recent name="E:\project\xfz2020\xfz\apps" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\project\xfz2020\xfz\front\src\images" />
-      <recent name="E:\project\xfz2020\xfz\front\src\images\banner" />
-      <recent name="E:\project\xfz2020\xfz\front\templates\cms" />
-      <recent name="E:\project\xfz2020\xfz\front\dist" />
       <recent name="E:\project\xfz2020\xfz\apps" />
     </key>
   </component>
@@ -108,7 +105,7 @@
       <workItem from="1583975820904" duration="146000" />
       <workItem from="1583976180396" duration="431000" />
       <workItem from="1583976751634" duration="22913000" />
-      <workItem from="1584062524999" duration="7939000" />
+      <workItem from="1584062524999" duration="18641000" />
     </task>
     <servers />
   </component>
@@ -116,26 +113,26 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="280" key="GridCell.Tab.0.bottom" timestamp="1584066044171">
+    <state width="1877" height="280" key="GridCell.Tab.0.bottom" timestamp="1584081260162">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584066044171" />
-    <state width="1877" height="280" key="GridCell.Tab.0.center" timestamp="1584066044171">
+    <state width="1877" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584081260162" />
+    <state width="1877" height="280" key="GridCell.Tab.0.center" timestamp="1584081260162">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584066044171" />
-    <state width="1877" height="280" key="GridCell.Tab.0.left" timestamp="1584066044171">
+    <state width="1877" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584081260162" />
+    <state width="1877" height="280" key="GridCell.Tab.0.left" timestamp="1584081260162">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584066044171" />
-    <state width="1877" height="280" key="GridCell.Tab.0.right" timestamp="1584066044171">
+    <state width="1877" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584081260162" />
+    <state width="1877" height="280" key="GridCell.Tab.0.right" timestamp="1584081260162">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584066044171" />
-    <state x="636" y="253" width="647" height="534" key="find.popup" timestamp="1583918470967">
+    <state width="1877" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584081260162" />
+    <state x="636" y="253" width="647" height="534" key="find.popup" timestamp="1584082239833">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="636" y="253" width="647" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1583918470967" />
+    <state x="636" y="253" width="647" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1584082239833" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1583897011021">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
