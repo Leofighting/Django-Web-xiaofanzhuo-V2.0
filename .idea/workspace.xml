@@ -3,9 +3,25 @@
   <component name="ChangeListManager">
     <list default="true" id="1cfbb381-21d5-4d16-af7b-be6b00a62295" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/cms/course_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cms/course_views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/cms/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cms/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/cms/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cms/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/cms/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cms/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/course/migrations/0001_initial.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/course/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/course/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/templates/cms/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/templates/cms/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/course/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/course/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/course/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/course/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/payinfo/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/payinfo/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/payinfo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/payinfo/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/dist/js/front_base.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/dist/js/front_base.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/dist/js/pub_course.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/dist/js/pub_course.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/js/front_base.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/js/front_base.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/js/pub_course.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/js/pub_course.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/templates/base/front_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/templates/base/front_base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/templates/course/course_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/templates/course/course_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/templates/course/course_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/templates/course/course_index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/templates/payinfo/payinfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/templates/payinfo/payinfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xfz/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/xfz/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +35,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="Python Script" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -40,24 +56,46 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/front/templates/cms" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/front/templates/course" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\project\xfz2020\xfz\front\templates\cms" />
-      <recent name="E:\project\xfz2020\xfz\front\src\images" />
-      <recent name="E:\project\xfz2020\xfz\front\src\images\banner" />
-      <recent name="E:\project\xfz2020\xfz\front\dist" />
-      <recent name="E:\project\xfz2020\xfz\apps" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\project\xfz2020\xfz\front\templates\common" />
       <recent name="E:\project\xfz2020\xfz\front\templates" />
       <recent name="E:\project\xfz2020\xfz\apps" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\project\xfz2020\xfz\front\templates\course" />
+      <recent name="E:\project\xfz2020\xfz\front\dist" />
+      <recent name="E:\project\xfz2020\xfz\front\templates\cms" />
+      <recent name="E:\project\xfz2020\xfz\front\src\images" />
+      <recent name="E:\project\xfz2020\xfz\front\src\images\banner" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Django server.xfz">
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="xfz" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="xfz" type="Python.DjangoServer" factoryName="Django server">
       <module name="xfz" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -82,6 +120,11 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.test" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -101,6 +144,8 @@
       <workItem from="1583976180396" duration="431000" />
       <workItem from="1583976751634" duration="22913000" />
       <workItem from="1584062524999" duration="20947000" />
+      <workItem from="1584105415090" duration="1076000" />
+      <workItem from="1584146616729" duration="16129000" />
     </task>
     <servers />
   </component>
@@ -108,29 +153,52 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="280" key="GridCell.Tab.0.bottom" timestamp="1584095270152">
+    <state x="552" y="178" key="#Deployment" timestamp="1584166953613">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584095270152" />
-    <state width="1877" height="280" key="GridCell.Tab.0.center" timestamp="1584095270151">
+    <state x="552" y="178" key="#Deployment/0.0.1920.1040@0.0.1920.1040" timestamp="1584166953613" />
+    <state width="1877" height="280" key="GridCell.Tab.0.bottom" timestamp="1584155625894">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584095270151" />
-    <state width="1877" height="280" key="GridCell.Tab.0.left" timestamp="1584095270151">
+    <state width="1877" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584155625894" />
+    <state width="1877" height="280" key="GridCell.Tab.0.center" timestamp="1584155625894">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584095270151" />
-    <state width="1877" height="280" key="GridCell.Tab.0.right" timestamp="1584095270152">
+    <state width="1877" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584155625894" />
+    <state width="1877" height="280" key="GridCell.Tab.0.left" timestamp="1584155625894">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584095270152" />
-    <state x="636" y="253" width="647" height="534" key="find.popup" timestamp="1584082239833">
+    <state width="1877" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584155625894" />
+    <state width="1877" height="280" key="GridCell.Tab.0.right" timestamp="1584155625894">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="636" y="253" width="647" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1584082239833" />
+    <state width="1877" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584155625894" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1584111477940">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584111477940" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1584111477940">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584111477940" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1584111477940">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584111477940" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1584111477940">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584111477940" />
+    <state x="636" y="253" width="647" height="534" key="find.popup" timestamp="1584152359283">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="636" y="253" width="647" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1584152359283" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1583897011021">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1583897011021" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/xfz$test.coverage" NAME="test Coverage Results" MODIFIED="1584146719537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

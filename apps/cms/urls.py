@@ -28,6 +28,6 @@ urlpatterns = [
 
 # 课程相关 url
 urlpatterns += [
-    path("pub_course", course_views.pub_course, name="pub_course"),
+    path("pub_course/", course_views.PubCourse.as_view(), name="pub_course"),
 
 ]

@@ -252,6 +252,7 @@ class NewsListView(View):
 
 class EditNewsView(View):
     """修改新闻内容"""
+
     def get(self, request):
         news_id = request.GET.get("news_id")
         news = News.objects.get(pk=news_id)

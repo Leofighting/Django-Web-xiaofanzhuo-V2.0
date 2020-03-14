@@ -27,8 +27,8 @@
         </div>
         <ul class="nav">
             <li class="active"><a href="/">创业资讯</a></li>
-            <li><a href="#">创业课堂</a></li>
-            <li><a href="#">付费咨询</a></li>
+            <li><a href="{% url 'course:course_index' %}">创业课堂</a></li>
+            <li><a href="{% url 'payinfo:payinfo' %}">付费咨询</a></li>
             <li><a href="#">搜索</a></li>
         </ul>
         <div class="auth-box">
