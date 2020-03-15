@@ -3,8 +3,10 @@ from datetime import datetime
 from urllib import parse
 
 import qiniu
+from django.contrib.auth.decorators import permission_required
 from django.shortcuts import render
 from django.contrib.admin.views.decorators import staff_member_required
+from django.utils.decorators import method_decorator
 from django.views.decorators.http import require_POST, require_GET
 from django.views.generic.base import View
 from django.core.paginator import Paginator
@@ -23,6 +25,7 @@ def cms_index(request):
     return render(request, "cms/cms_index.html")
 
 
+@method_decorator(permission_required(perm="news.add_news", login_url="/"), name="dispatch")
 class WriteNewsView(View):
     """编辑新闻"""
 
@@ -50,6 +53,7 @@ class WriteNewsView(View):
 
 
 @require_GET
+@permission_required(perm="news.add_newscategory", login_url="/")
 def news_category(request):
     """新闻分类"""
     categories = NewsCategory.objects.all()
@@ -60,6 +64,7 @@ def news_category(request):
 
 
 @require_POST
+@permission_required(perm="news.add_newscategory", login_url="/")
 def add_news_category(request):
     """添加新闻分类"""
     name = request.POST.get("name")
@@ -71,6 +76,7 @@ def add_news_category(request):
 
 
 @require_POST
+@permission_required(perm="news.change_newscategory", login_url="/")
 def edit_news_category(request):
     """修改新闻分类"""
     form = EditNewsCategoryForm(request.POST)
@@ -87,6 +93,7 @@ def edit_news_category(request):
 
 
 @require_POST
+@permission_required(perm="news.delete_newscategory", login_url="/")
 def delete_news_category(request):
     """删除新闻分类"""
     pk = request.POST.get("pk")
@@ -98,6 +105,7 @@ def delete_news_category(request):
 
 
 @require_POST
+@staff_member_required(login_url="index")
 def upload_file(request):
     """上传新闻缩略图"""
     file = request.FILES.get("file")
@@ -111,6 +119,7 @@ def upload_file(request):
 
 
 @require_GET
+@staff_member_required(login_url="index")
 def qntoken(request):
     """七牛云 token"""
     access_key = QINIU_ACCESS_KEY
@@ -121,11 +130,13 @@ def qntoken(request):
     return restful.result(data={"token": token})
 
 
+@permission_required(perm="news.add_banner", login_url="/")
 def banner(request):
     """轮播图"""
     return render(request, "cms/banners.html")
 
 
+@permission_required(perm="news.add_banner", login_url="/")
 def add_banner(request):
     """添加轮播图"""
     form = AddBannerForm(request.POST)
@@ -139,6 +150,7 @@ def add_banner(request):
         return restful.params_error(message=form.get_errors())
 
 
+@permission_required(perm="news.add_banner", login_url="/")
 def banner_list(request):
     """轮播图列表"""
     banners = Banner.objects.all()
@@ -146,6 +158,7 @@ def banner_list(request):
     return restful.result(data=serializer.data)
 
 
+@permission_required(perm="news.delete_banner", login_url="/")
 def delete_banner(request):
     """删除轮播图"""
     banner_id = request.POST.get("banner_id")
@@ -153,6 +166,7 @@ def delete_banner(request):
     return restful.ok()
 
 
+@permission_required(perm="news.change_banner", login_url="/")
 def edit_banner(request):
     """编辑轮播图"""
     form = EditBannerForm(request.POST)
@@ -167,6 +181,7 @@ def edit_banner(request):
         return restful.params_error(message=form.get_errors())
 
 
+@method_decorator(permission_required(perm="news.change_news", login_url="/"), name="dispatch")
 class NewsListView(View):
     """新闻列表"""
 
@@ -250,6 +265,7 @@ class NewsListView(View):
         }
 
 
+@method_decorator(permission_required(perm="news.change_news", login_url="/"), name="dispatch")
 class EditNewsView(View):
     """修改新闻内容"""
 
@@ -282,6 +298,7 @@ class EditNewsView(View):
 
 
 @require_POST
+@permission_required(perm="news.delete_news", login_url="/")
 def delete_news(request):
     """删除新闻"""
     news_id = request.POST.get("news_id")

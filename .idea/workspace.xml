@@ -3,17 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="1cfbb381-21d5-4d16-af7b-be6b00a62295" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/course/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/course/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/news/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/news/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/payinfo/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/payinfo/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/payinfo/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/payinfo/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/payinfo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/payinfo/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/dist/js/course_order.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/js/course_order.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/templates/base/front_base.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/templates/base/front_base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/templates/course/course_order.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/templates/course/course_order.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/templates/search/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/templates/search/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xfz/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/xfz/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xfz/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/xfz/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/cms/course_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cms/course_views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/cms/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cms/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/cms/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/cms/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/xfzauth/decorators.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/xfzauth/decorators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/templates/cms/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/templates/cms/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,9 +20,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -139,7 +133,7 @@
       <workItem from="1584062524999" duration="20947000" />
       <workItem from="1584105415090" duration="1076000" />
       <workItem from="1584146616729" duration="25711000" />
-      <workItem from="1584234585236" duration="1964000" />
+      <workItem from="1584234585236" duration="9060000" />
     </task>
     <servers />
   </component>
@@ -155,22 +149,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="635" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1584236410347" />
-    <state width="1877" height="280" key="GridCell.Tab.0.bottom" timestamp="1584235505886">
+    <state width="1877" height="280" key="GridCell.Tab.0.bottom" timestamp="1584243808721">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584235505886" />
-    <state width="1877" height="280" key="GridCell.Tab.0.center" timestamp="1584235505885">
+    <state width="1877" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584243808721" />
+    <state width="1877" height="280" key="GridCell.Tab.0.center" timestamp="1584243808721">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584235505885" />
-    <state width="1877" height="280" key="GridCell.Tab.0.left" timestamp="1584235505885">
+    <state width="1877" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584243808721" />
+    <state width="1877" height="280" key="GridCell.Tab.0.left" timestamp="1584243808721">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584235505885" />
-    <state width="1877" height="280" key="GridCell.Tab.0.right" timestamp="1584235505886">
+    <state width="1877" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584243808721" />
+    <state width="1877" height="280" key="GridCell.Tab.0.right" timestamp="1584243808721">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584235505886" />
+    <state width="1877" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584243808721" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1584111477940">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

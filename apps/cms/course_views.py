@@ -1,7 +1,9 @@
 # -*- coding:utf-8 -*-
 __author__ = "leo"
 
+from django.contrib.auth.decorators import permission_required
 from django.shortcuts import render
+from django.utils.decorators import method_decorator
 from django.views.generic.base import View
 
 from apps.cms.forms import PubCourseForm
@@ -9,6 +11,7 @@ from apps.course.models import CourseCategory, Teacher, Course
 from utils import restful
 
 
+@method_decorator(permission_required(perm="course.add_course", login_url="/"), name="dispatch")
 class PubCourse(View):
     """发布课程"""
 

@@ -3,7 +3,7 @@ __author__ = "leo"
 
 from django.urls import path
 
-from apps.cms import views, course_views
+from apps.cms import views, course_views, staff_views
 
 app_name = "cms"
 
@@ -30,4 +30,10 @@ urlpatterns = [
 urlpatterns += [
     path("pub_course/", course_views.PubCourse.as_view(), name="pub_course"),
 
+]
+
+# 员工管理相关 url
+urlpatterns += [
+    path("staff_index/", staff_views.staff_index, name="staff_index"),
+    path("add_staff/", staff_views.AddStaffView.as_view(), name="add_staff"),
 ]
