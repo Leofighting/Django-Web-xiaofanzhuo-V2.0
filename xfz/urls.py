@@ -28,7 +28,8 @@ urlpatterns = [
     path("course/", include("apps.course.urls")),
     path("payinfo/", include("apps.payinfo.urls")),
     path("ueditor/", include("apps.ueditor.urls")),
-    path('search/', views.search, name="search"),
+    # path('search/', views.search, name="search"),
+    path('search/', include("haystack.urls")),
     path("", views.index, name="index"),
 
 

@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'apps.ueditor',
     'rest_framework',
     'debug_toolbar',
+    'haystack',
 ]
 
 MIDDLEWARE = [
@@ -185,3 +186,13 @@ DEBUG_TOOLBAR_CONFIG = {
 # 百度云的配置
 BAIDU_CLOUD_USER_ID = '5b8849ddc6504318abcea39fe620948e'
 BAIDU_CLOUD_USER_KEY = 'c228d166497b400d'
+
+# haystack 搜索引擎配置
+HAYSTACK_CONNECTIONS = {
+    "default": {
+        "ENGINE": "apps.news.whoosh_cn_backend.WhooshEngine",
+        "PATH": os.path.join(BASE_DIR, "whoosh_index"),
+    }
+}
+
+HAYSTACK_SIGNAL_PROCESSOR = "haystack.signals.RealtimeSignalProcessor"  # 新闻变更后，自动更新索引

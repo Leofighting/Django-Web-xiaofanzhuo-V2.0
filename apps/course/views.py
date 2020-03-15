@@ -27,7 +27,7 @@ def course_detail(request, course_id):
         course = Course.objects.get(pk=course_id)
 
     except Course.DoesNotExist:
-        raise Http404
+        raise Http404()
 
     buyed = CourseOrder.objects.filter(course=course, buyer=request.user, status=2).exists()
     context = {
@@ -65,11 +65,15 @@ def course_order(request, course_id):
     try:
         course = Course.objects.get(pk=course_id)
     except Course.DoesNotExist:
-        raise Http404
+        raise Http404()
 
     order = CourseOrder.objects.create(course=course, buyer=request.user)
     context = {
-        "course": course,
+        "goods": {
+            "thumbnail": course.cover_url,
+            "title": course.title,
+            "price": course.price
+        },
         "order": order,
         "notify_url": request.build_absolute_uri(reverse("course:notify_view")),
         "return_url": request.build_absolute_uri(

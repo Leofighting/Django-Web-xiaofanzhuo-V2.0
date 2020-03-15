@@ -1,3 +1,4 @@
+from django.db.models import Q
 from django.http import Http404
 from django.shortcuts import render
 
@@ -47,12 +48,17 @@ def news_detail(request, news_id):
         }
         return render(request, "news/news_detail.html", context=context)
     except News.DoesNotExist:
-        raise Http404
+        raise Http404()
 
 
 def search(request):
     """搜索页"""
-    return render(request, "search/search.html")
+    key_word = request.GET.get("q")
+    context = {}
+    if key_word:
+        newses = News.objects.filter(Q(title__icontains=key_word) | Q(content__icontains=key_word)).all()
+        context["newses"] = newses
+    return render(request, "search/search.html", context=context)
 
 
 @xfz_login_required
