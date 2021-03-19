@@ -6,7 +6,7 @@ Django==2.0.13
 django-debug-toolbar==2.2
 django-haystack==2.8.1
 django-shortuuidfield==0.1.3
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 idna==2.9
 jieba==0.39
 jmespath==0.9.5
